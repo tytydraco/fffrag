@@ -12,16 +12,16 @@ Some Spreadstrum SoCs in feature phones have a firmware bug when reading FAT fil
 
 Defragment and reorganize the FAT structure to position directories at the beginning of the FAT table.
 
-Usage: `fffrag /dev/sdX1`
+Usage: `fffrag.sh /dev/sdX1`
 
-### fffcopy
+## fffcopy
 
 Recursively copy a directory from the host system to the FAT device, directories first.
 
-Usage: `fffcopy /dev/sdX1 /path/to/source/dir`
+Usage: `source fffrag.sh && fffcopy /dev/sdX1 /path/to/source/dir/`
 
-### fffvalidate
+## fffvalidate
 
 Print the FAT cluster and sector numbers for the final filesystem.
 
-Usage: `fffvalidate /dev/sdX1`
+Usage: `source fffrag.sh && fffvalidate /dev/sdX1`

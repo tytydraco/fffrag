@@ -34,7 +34,7 @@ function fffcopy() {
     local destdir
     while read -r dir; do
         reldir="${dir#"$source"}"
-        destdir="$mountpoint$reldir"
+        destdir="$mountpoint/$reldir"
 
         # Create low-sector positioned directory.
         sudo mkdir -p "$destdir"
@@ -71,7 +71,7 @@ function fffrag() {
     local destdir
     while read -r dir; do
         reldir="${dir#"$tmpdir"}"
-        destdir="$mountpoint$reldir"
+        destdir="$mountpoint/$reldir"
 
         # Create low-sector positioned directory.
         sudo mkdir -p "$destdir"
